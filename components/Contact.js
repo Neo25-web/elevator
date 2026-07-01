@@ -17,7 +17,7 @@ export default function Contact() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const text = `*New Inquiry - Classic Elevators*%0A%0AName: ${form.name}%0APhone: ${form.phone}%0AEmail: ${form.email}%0AMessage: ${form.message}`;
+    const text = `*New Inquiry - Classic Elevators*%0A%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AEmail: ${encodeURIComponent(form.email)}%0AMessage: ${encodeURIComponent(form.message)}`;
     window.open(`https://wa.me/${site.whatsapp}?text=${text}`, "_blank");
   };
 

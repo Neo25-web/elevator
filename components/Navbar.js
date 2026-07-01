@@ -26,6 +26,22 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-[1000] transition-all duration-300 ${
@@ -61,6 +77,8 @@ export default function Navbar() {
 
         <button
           aria-label="Menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
           className="z-[1001] flex flex-col gap-[5px] p-1 md:hidden"
         >
@@ -71,6 +89,7 @@ export default function Navbar() {
       </div>
 
       <div
+        id="mobile-menu"
         className={`fixed top-0 right-0 h-screen w-3/4 max-w-[300px] flex-col items-center justify-center gap-6 bg-navy-light shadow-[-10px_0_40px_rgba(0,0,0,0.4)] transition-[right] duration-300 md:hidden ${
           open ? "flex right-0" : "flex -right-full"
         }`}

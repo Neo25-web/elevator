@@ -1,9 +1,22 @@
 import "./globals.css";
 
 export const metadata = {
+  metadataBase: new URL("https://classicelevators.com.pk"),
   title: "Classic Elevators Pakistan | Premium Elevator Solutions in Lahore",
   description:
     "Classic Elevators Pakistan - Passenger and cargo elevator installation, maintenance, and modernization in Lahore.",
+  openGraph: {
+    title: "Classic Elevators Pakistan | Premium Elevator Solutions in Lahore",
+    description:
+      "Classic Elevators Pakistan - Passenger and cargo elevator installation, maintenance, and modernization in Lahore.",
+    url: "https://classicelevators.com.pk",
+    siteName: "Classic Elevators",
+    locale: "en_PK",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }) {
