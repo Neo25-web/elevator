@@ -1,20 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { navItems } from "@/lib/site";
 
 function Logo() {
   return (
-    <a href="#home" className="flex items-center gap-2.5 text-lg font-bold">
+    <Link href="/" className="flex items-center gap-2.5 text-lg font-bold">
       <span className="grid h-[42px] w-[42px] place-items-center rounded-[10px] bg-gradient-to-br from-gold to-gold-dark text-xl">
         🏢
       </span>
       <span>
         Classic <span className="text-gold">Elevators</span>
       </span>
-    </a>
+    </Link>
   );
 }
+
+const mainNavItems = navItems.filter((item) => item.href !== "/contact");
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -54,24 +57,24 @@ export default function Navbar() {
         <Logo />
 
         <ul className="hidden items-center gap-8 md:flex">
-          {navItems.map((item) => (
+          {mainNavItems.map((item) => (
             <li key={item.href}>
-              <a
+              <Link
                 href={item.href}
                 className="group relative text-sm font-medium text-slate-300 transition-colors hover:text-gold"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             </li>
           ))}
           <li>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="rounded-lg bg-gradient-to-br from-gold to-gold-dark px-5 py-2 text-sm font-semibold text-navy transition-opacity hover:opacity-90"
             >
               Contact Us
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -94,15 +97,15 @@ export default function Navbar() {
           open ? "flex right-0" : "flex -right-full"
         }`}
       >
-        {[...navItems, { label: "Contact Us", href: "#contact" }].map((item) => (
-          <a
+        {navItems.map((item) => (
+          <Link
             key={item.href}
             href={item.href}
             onClick={() => setOpen(false)}
             className="text-base font-medium text-slate-300 transition-colors hover:text-gold"
           >
             {item.label}
-          </a>
+          </Link>
         ))}
       </div>
     </nav>

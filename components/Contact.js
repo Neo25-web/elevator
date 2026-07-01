@@ -10,7 +10,7 @@ const details = [
   { icon: "✉️", label: "Email", value: site.email, href: `mailto:${site.email}` },
 ];
 
-export default function Contact() {
+export default function Contact({ showIntro = true }) {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
 
   const update = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -29,14 +29,18 @@ export default function Contact() {
       <div className="mx-auto w-[92%] max-w-[1140px]">
         <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.2fr]">
           <Reveal>
-            <span className="mb-3 block text-xs font-bold uppercase tracking-[0.12em] text-gold">
-              Get In Touch
-            </span>
-            <h2 className="mb-4 font-serif text-3xl">Contact Us Today</h2>
-            <p className="mb-8 text-slate-400">
-              Ready to elevate your building? Reach out for a free consultation
-              and quote.
-            </p>
+            {showIntro && (
+              <>
+                <span className="mb-3 block text-xs font-bold uppercase tracking-[0.12em] text-gold">
+                  Get In Touch
+                </span>
+                <h2 className="mb-4 font-serif text-3xl">Contact Us Today</h2>
+                <p className="mb-8 text-slate-400">
+                  Ready to elevate your building? Reach out for a free consultation
+                  and quote.
+                </p>
+              </>
+            )}
 
             {details.map((d) => (
               <div key={d.label} className="mb-5 flex items-start gap-4">

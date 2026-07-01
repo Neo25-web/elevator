@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 export default function Hero() {
@@ -24,18 +25,18 @@ export default function Hero() {
             buildings across Pakistan.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-br from-gold to-gold-dark px-7 py-3.5 font-semibold text-navy transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(201,162,39,0.35)]"
             >
               Get a Free Quote
-            </a>
-            <a
-              href="#services"
+            </Link>
+            <Link
+              href="/products"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-7 py-3.5 font-semibold text-white transition-all hover:border-gold hover:text-gold"
             >
-              Our Services
-            </a>
+              Our Products
+            </Link>
           </div>
         </div>
       </div>

@@ -1,0 +1,23 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import PageHeader from "@/components/PageHeader";
+import Contact from "@/components/Contact";
+
+export const metadata = {
+  title: "Contact Us | Classic Elevators Pakistan",
+  description:
+    "Get in touch with Classic Elevators for a free consultation and quote on passenger, panoramic and freight elevator solutions in Lahore.",
+};
+
+export default function ContactPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <PageHeader label="Get In Touch" title="Contact Us" />
+        <Contact showIntro={false} />
+      </main>
+      <Footer />
+    </>
+  );
+}

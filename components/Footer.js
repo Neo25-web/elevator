@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site, navItems } from "@/lib/site";
 
 export default function Footer() {
@@ -6,14 +7,14 @@ export default function Footer() {
       <div className="mx-auto w-[92%] max-w-[1140px]">
         <div className="mb-10 grid gap-8 md:grid-cols-[2fr_1fr_1fr]">
           <div>
-            <a href="#home" className="flex items-center gap-2.5 text-lg font-bold">
+            <Link href="/" className="flex items-center gap-2.5 text-lg font-bold">
               <span className="grid h-[42px] w-[42px] place-items-center rounded-[10px] bg-gradient-to-br from-gold to-gold-dark text-xl">
                 🏢
               </span>
               <span>
                 Classic <span className="text-gold">Elevators</span>
               </span>
-            </a>
+            </Link>
             <p className="mt-4 max-w-[300px] text-[0.9rem] text-slate-400">
               Pakistan&apos;s trusted name in passenger and cargo elevator
               solutions. Quality, safety, and service you can rely on.
@@ -25,11 +26,11 @@ export default function Footer() {
               Quick Links
             </h4>
             <ul className="space-y-2 text-[0.9rem] text-slate-400">
-              {[...navItems, { label: "Contact", href: "#contact" }].map((item) => (
+              {navItems.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="hover:text-gold">
+                  <Link href={item.href} className="hover:text-gold">
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
