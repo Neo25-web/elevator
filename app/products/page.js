@@ -4,12 +4,21 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
-import { products } from "@/lib/site";
+import { BASE_URL, products } from "@/lib/site";
 
 export const metadata = {
   title: "Our Products | Classic Elevators Pakistan",
   description:
     "Passenger, capsule panoramic and freight elevator solutions for hospitals, commercial buildings and industrial facilities in Lahore.",
+  openGraph: {
+    title: "Our Products | Classic Elevators Pakistan",
+    description:
+      "Passenger, capsule panoramic and freight elevator solutions for hospitals, commercial buildings and industrial facilities in Lahore.",
+    url: `${BASE_URL}/products`,
+    siteName: "Classic Elevators",
+    locale: "en_PK",
+    type: "website",
+  },
 };
 
 export default function ProductsPage() {
