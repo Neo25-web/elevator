@@ -49,7 +49,7 @@ export default function About() {
               className="h-full w-full bg-cover bg-center"
               style={{
                 backgroundImage:
-                  "linear-gradient(135deg, rgba(201,162,39,0.1), transparent), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800')",
+                  "linear-gradient(135deg, rgba(201,162,39,0.1), transparent), url('/about.svg')", // real: /about.jpg (factory or installation photo)
               }}
             />
           </Reveal>

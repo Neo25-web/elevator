@@ -42,8 +42,29 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-[0.9rem] text-slate-400">
               <li>📍 {site.location}</li>
-              <li>📞 {site.phoneDisplay}</li>
-              <li>✉️ {site.email}</li>
+              <li>
+                📞{" "}
+                <a href={`tel:${site.phoneHref}`} className="hover:text-gold">
+                  {site.phoneDisplay}
+                </a>
+              </li>
+              <li>
+                ✉️{" "}
+                <a href={`mailto:${site.email}`} className="hover:text-gold">
+                  {site.email}
+                </a>
+              </li>
+              <li>
+                ▶️{" "}
+                <a
+                  href={site.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold"
+                >
+                  YouTube Channel
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import "./globals.css";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { BASE_URL, site } from "@/lib/site";
 
 const jsonLd = {
@@ -18,7 +19,7 @@ const jsonLd = {
   telephone: site.phoneHref,
   email: site.email,
   url: BASE_URL,
-  sameAs: [],
+  sameAs: [site.youtube],
 };
 
 export const metadata = {
@@ -59,7 +60,10 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans leading-relaxed antialiased">{children}</body>
+      <body className="font-sans leading-relaxed antialiased">
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }
