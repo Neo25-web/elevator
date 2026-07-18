@@ -68,4 +68,4 @@ Pages: Home, Products (grouped: Elevators / Control Panels), product detail page
 3. Real photos of installations, factory, panels
 4. Facebook/Instagram page links (if any) for footer + structured data
 5. Confirm exact founding year (2005 vs 2006) if "Since 2005" needs adjusting
-6. Register the domain `classicelevators.com.pk` (and `.pk` if available)
+6. Register the domain `classicelevators.com.pk` — **in progress** at HosterPK (Rs. 3,899 / 2 yrs) as of 2026-07-18; see [LAUNCH-STEPS.md](LAUNCH-STEPS.md) for what comes after
