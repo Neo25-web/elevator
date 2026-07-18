@@ -12,9 +12,11 @@ export default function FeaturedProducts() {
           subtitle="Passenger, panoramic and freight elevator solutions for every building type."
         />
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {products.map((product, i) => (
-            <ProductCard key={product.slug} product={product} delay={i * 100} />
-          ))}
+          {products
+            .filter((product) => product.category === "elevators")
+            .map((product, i) => (
+              <ProductCard key={product.slug} product={product} delay={i * 100} />
+            ))}
         </div>
       </div>
     </section>

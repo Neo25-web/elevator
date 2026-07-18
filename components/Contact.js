@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 import Reveal from "./Reveal";
 
 const details = [
-  { icon: "📍", label: "Location", value: site.location },
+  { icon: "📍", label: "Location", value: `${site.address}, Sialkot` },
   { icon: "📞", label: "Phone", value: site.phoneDisplay, href: `tel:${site.phoneHref}` },
   { icon: "✉️", label: "Email", value: site.email, href: `mailto:${site.email}` },
 ];

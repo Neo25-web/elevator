@@ -4,16 +4,16 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
-import { BASE_URL, products } from "@/lib/site";
+import { BASE_URL, categories, products } from "@/lib/site";
 
 export const metadata = {
   title: "Our Products | Classic Elevators Pakistan",
   description:
-    "Passenger, capsule panoramic and freight elevator solutions for hospitals, commercial buildings and industrial facilities in Lahore.",
+    "Passenger, panoramic and freight elevators plus manual and microprocessor control panels for hospitals, malls and industrial facilities across Daska, Sialkot, Lahore and Punjab.",
   openGraph: {
     title: "Our Products | Classic Elevators Pakistan",
     description:
-      "Passenger, capsule panoramic and freight elevator solutions for hospitals, commercial buildings and industrial facilities in Lahore.",
+      "Passenger, panoramic and freight elevators plus manual and microprocessor control panels for hospitals, malls and industrial facilities across Daska, Sialkot, Lahore and Punjab.",
     url: `${BASE_URL}/products`,
     siteName: "Classic Elevators",
     locale: "en_PK",
@@ -29,15 +29,27 @@ export default function ProductsPage() {
         <PageHeader
           label="What We Offer"
           title="Our Products"
-          subtitle="A complete range of passenger, panoramic and freight elevators tailored to hospitals, commercial spaces and industrial sites."
+          subtitle="Elevators and control panels for hospitals, commercial spaces, industrial sites, and every lift installation."
         />
         <section className="py-24">
-          <div className="mx-auto w-[92%] max-w-[1140px]">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {products.map((product, i) => (
-                <ProductCard key={product.slug} product={product} delay={i * 100} />
-              ))}
-            </div>
+          <div className="mx-auto w-[92%] max-w-[1140px] space-y-16">
+            {categories.map((category) => {
+              const categoryProducts = products.filter((p) => p.category === category.slug);
+              if (categoryProducts.length === 0) return null;
+
+              return (
+                <div key={category.slug}>
+                  <Reveal>
+                    <h2 className="mb-8 font-serif text-2xl text-gold">{category.label}</h2>
+                  </Reveal>
+                  <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {categoryProducts.map((product, i) => (
+                      <ProductCard key={product.slug} product={product} delay={i * 100} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
         <section className="border-t border-gold/10 bg-navy-light py-16">

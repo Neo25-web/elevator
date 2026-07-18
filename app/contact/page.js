@@ -7,11 +7,11 @@ import { BASE_URL } from "@/lib/site";
 export const metadata = {
   title: "Contact Us | Classic Elevators Pakistan",
   description:
-    "Get in touch with Classic Elevators for a free consultation and quote on passenger, panoramic and freight elevator solutions in Lahore.",
+    "Get in touch with Classic Elevators for a free consultation and quote on passenger, panoramic and freight elevator solutions in Daska, Sialkot, Lahore and across Punjab.",
   openGraph: {
     title: "Contact Us | Classic Elevators Pakistan",
     description:
-      "Get in touch with Classic Elevators for a free consultation and quote on passenger, panoramic and freight elevator solutions in Lahore.",
+      "Get in touch with Classic Elevators for a free consultation and quote on passenger, panoramic and freight elevator solutions in Daska, Sialkot, Lahore and across Punjab.",
     url: `${BASE_URL}/contact`,
     siteName: "Classic Elevators",
     locale: "en_PK",

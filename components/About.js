@@ -12,13 +12,14 @@ export default function About() {
               About Us
             </span>
             <h2 className="mb-5 font-serif text-[clamp(1.8rem,3.5vw,2.4rem)]">
-              Trusted Elevator Experts in Lahore
+              Trusted Elevator Experts Since 2005
             </h2>
             <p className="mb-4 text-slate-400">
-              Classic Elevators Pakistan has been delivering world-class vertical
-              transportation solutions since our founding. We combine
-              international engineering standards with local expertise to serve
-              clients across Lahore and beyond.
+              Classic Elevators is a family-run business based in Daska,
+              delivering passenger, panoramic and freight elevator solutions for
+              two decades. From hospitals and malls to industrial loaders, we
+              serve clients across Daska, Sialkot, Lahore, Gujrat, Wazirabad,
+              Jhelum, Islamabad, Shakargarh and Pasrur.
             </p>
             <p className="mb-4 text-slate-400">
               From design and installation to ongoing maintenance, our certified

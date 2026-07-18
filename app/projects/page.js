@@ -24,7 +24,7 @@ export default function ProjectsPage() {
         <PageHeader
           label="Our Work"
           title="Recent Projects"
-          subtitle="A selection of passenger, panoramic and freight elevator installations across Lahore."
+          subtitle="A selection of passenger, panoramic and freight elevator installations across Daska, Sialkot, Lahore, Gujrat, Islamabad and beyond."
         />
         <section className="py-24">
           <div className="mx-auto w-[92%] max-w-[1140px]">

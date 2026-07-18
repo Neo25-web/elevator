@@ -6,11 +6,13 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "Classic Elevators",
   description:
-    "Classic Elevators Pakistan - Passenger and cargo elevator installation, maintenance, and modernization in Lahore.",
-  areaServed: "Lahore, Pakistan",
+    "Classic Elevators - Passenger, panoramic and freight elevator installation, maintenance and control panels. Based in Daska, serving Sialkot, Lahore, Gujrat, Wazirabad, Jhelum, Islamabad and across Punjab.",
+  areaServed: site.serviceAreas.map((city) => ({ "@type": "City", name: city })),
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Lahore",
+    streetAddress: "Pasrur Road, Islampura",
+    addressLocality: "Daska",
+    addressRegion: "Punjab",
     addressCountry: "PK",
   },
   telephone: site.phoneHref,
@@ -21,13 +23,13 @@ const jsonLd = {
 
 export const metadata = {
   metadataBase: new URL(BASE_URL),
-  title: "Classic Elevators Pakistan | Premium Elevator Solutions in Lahore",
+  title: "Classic Elevators | Elevator Company in Daska, Sialkot, Pakistan",
   description:
-    "Classic Elevators Pakistan - Passenger and cargo elevator installation, maintenance, and modernization in Lahore.",
+    "Classic Elevators - Passenger, panoramic and freight elevator installation, maintenance and control panels in Daska, Sialkot, Lahore, Gujrat, Wazirabad, Jhelum and Islamabad.",
   openGraph: {
-    title: "Classic Elevators Pakistan | Premium Elevator Solutions in Lahore",
+    title: "Classic Elevators | Elevator Company in Daska, Sialkot, Pakistan",
     description:
-      "Classic Elevators Pakistan - Passenger and cargo elevator installation, maintenance, and modernization in Lahore.",
+      "Classic Elevators - Passenger, panoramic and freight elevator installation, maintenance and control panels in Daska, Sialkot, Lahore, Gujrat, Wazirabad, Jhelum and Islamabad.",
     url: BASE_URL,
     siteName: "Classic Elevators",
     locale: "en_PK",
