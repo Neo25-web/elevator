@@ -8,3 +8,7 @@ npm-debug.log*
 .env*
 .vercel
 next-env.d.ts
+
+# Local-only files
+/elevator.zip
+/.claude/
