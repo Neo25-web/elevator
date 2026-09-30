@@ -49,6 +49,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                📞{" "}
+                <a href={`tel:${site.phone2Href}`} className="hover:text-gold">
+                  {site.phone2Display}
+                </a>{" "}
+                <span className="text-slate-500">({site.phone2Name})</span>
+              </li>
+              <li>
                 ✉️{" "}
                 <a href={`mailto:${site.email}`} className="hover:text-gold">
                   {site.email}
