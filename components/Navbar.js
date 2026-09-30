@@ -46,68 +46,95 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <nav
-      className={`fixed inset-x-0 top-0 z-[1000] transition-all duration-300 ${
-        scrolled
-          ? "bg-navy/95 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.3)] backdrop-blur-md"
-          : "py-4"
-      }`}
-    >
-      <div className="mx-auto flex w-[92%] max-w-[1140px] items-center justify-between">
-        <Logo />
-
-        <ul className="hidden items-center gap-8 md:flex">
-          {mainNavItems.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className="group relative text-sm font-medium text-slate-300 transition-colors hover:text-gold"
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-              </Link>
-            </li>
-          ))}
-          <li>
-            <Link
-              href="/contact"
-              className="rounded-lg bg-gradient-to-br from-gold to-gold-dark px-5 py-2 text-sm font-semibold text-navy transition-opacity hover:opacity-90"
-            >
-              Contact Us
-            </Link>
-          </li>
-        </ul>
-
-        <button
-          aria-label="Menu"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((v) => !v)}
-          className="z-[1001] flex flex-col gap-[5px] p-1 md:hidden"
-        >
-          <span className={`h-0.5 w-[26px] rounded bg-gold transition-all ${open ? "translate-y-[7px] rotate-45" : ""}`} />
-          <span className={`h-0.5 w-[26px] rounded bg-gold transition-all ${open ? "opacity-0" : ""}`} />
-          <span className={`h-0.5 w-[26px] rounded bg-gold transition-all ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
-        </button>
-      </div>
-
-      <div
-        id="mobile-menu"
-        className={`fixed top-0 flex h-screen w-3/4 max-w-[300px] flex-col items-center justify-center gap-6 bg-navy-light shadow-[-10px_0_40px_rgba(0,0,0,0.4)] transition-[right,visibility] duration-300 md:hidden ${
-          open ? "visible right-0" : "invisible -right-full"
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 transition-all duration-300 ${
+          open ? "z-[1201]" : "z-[1000]"
+        } ${
+          scrolled || open
+            ? "bg-navy/95 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.3)] backdrop-blur-md"
+            : "py-4"
         }`}
       >
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            onClick={() => setOpen(false)}
-            className="text-base font-medium text-slate-300 transition-colors hover:text-gold"
+        <div className="mx-auto flex w-[92%] max-w-[1140px] items-center justify-between">
+          <Logo />
+
+          <ul className="hidden items-center gap-8 md:flex">
+            {mainNavItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="group relative text-sm font-medium text-slate-300 transition-colors hover:text-gold"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link
+                href="/contact"
+                className="rounded-lg bg-gradient-to-br from-gold to-gold-dark px-5 py-2 text-sm font-semibold text-navy transition-opacity hover:opacity-90"
+              >
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((v) => !v)}
+            className="relative z-[1201] flex h-10 w-10 items-center justify-center md:hidden"
           >
-            {item.label}
-          </Link>
-        ))}
+            <span className="sr-only">{open ? "Close" : "Menu"}</span>
+            <span className="relative block h-[18px] w-[26px]">
+              <span
+                className={`absolute left-0 block h-0.5 w-full rounded bg-gold transition-all duration-300 ${
+                  open ? "top-[8px] rotate-45" : "top-0"
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-[8px] block h-0.5 w-full rounded bg-gold transition-all duration-300 ${
+                  open ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`absolute left-0 block h-0.5 w-full rounded bg-gold transition-all duration-300 ${
+                  open ? "top-[8px] -rotate-45" : "top-[16px]"
+                }`}
+              />
+            </span>
+          </button>
+        </div>
+      </header>
+
+      {/* Full-screen mobile menu — below the header toggle so the X button always works */}
+      <div
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
+        className={`fixed inset-0 z-[1200] flex flex-col bg-navy-deep pt-20 transition-transform duration-300 ease-out md:hidden ${
+          open ? "translate-x-0" : "translate-x-full pointer-events-none"
+        }`}
+      >
+        <nav className="flex flex-1 flex-col items-center justify-center gap-8 pb-16">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              tabIndex={open ? 0 : -1}
+              className="text-xl font-medium text-slate-200 transition-colors hover:text-gold"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </div>
-    </nav>
+    </>
   );
 }
