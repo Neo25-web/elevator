@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
-import { BASE_URL, technology } from "@/lib/site";
+import { BASE_URL, technology, ogDefaults } from "@/lib/site";
 
 export const metadata = {
   title: "Technology & Machines | Classic Elevators Pakistan",
@@ -14,9 +14,7 @@ export const metadata = {
     description:
       "Learn about the geared and gearless machines, VVVF controls, safety systems and components used in Classic Elevators installations.",
     url: `${BASE_URL}/technology`,
-    siteName: "Classic Elevators",
-    locale: "en_PK",
-    type: "website",
+    ...ogDefaults,
   },
 };
 

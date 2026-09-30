@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
-import { BASE_URL, categories, products } from "@/lib/site";
+import { BASE_URL, categories, products, ogDefaults } from "@/lib/site";
 
 export const metadata = {
   title: "Our Products | Classic Elevators Pakistan",
@@ -15,9 +15,7 @@ export const metadata = {
     description:
       "Passenger, panoramic and freight elevators plus manual and microprocessor control panels for hospitals, malls and industrial facilities across Daska, Sialkot, Lahore and Punjab.",
     url: `${BASE_URL}/products`,
-    siteName: "Classic Elevators",
-    locale: "en_PK",
-    type: "website",
+    ...ogDefaults,
   },
 };
 

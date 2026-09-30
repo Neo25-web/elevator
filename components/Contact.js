@@ -17,7 +17,15 @@ export default function Contact({ showIntro = true }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const text = `*New Inquiry - Classic Elevators*%0A%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AEmail: ${encodeURIComponent(form.email)}%0AMessage: ${encodeURIComponent(form.message)}`;
+    const lines = [
+      "*New Inquiry - Classic Elevators*",
+      "",
+      `Name: ${form.name}`,
+      `Phone: ${form.phone}`,
+      ...(form.email ? [`Email: ${form.email}`] : []),
+      `Message: ${form.message}`,
+    ];
+    const text = encodeURIComponent(lines.join("\n"));
     window.open(`https://wa.me/${site.whatsapp}?text=${text}`, "_blank");
   };
 
@@ -81,19 +89,19 @@ export default function Contact({ showIntro = true }) {
                 <label htmlFor="name" className="mb-1.5 block text-[0.85rem] font-medium text-slate-300">
                   Full Name
                 </label>
-                <input id="name" name="name" value={form.name} onChange={update} placeholder="Your name" required className={inputClass} />
+                <input id="name" name="name" autoComplete="name" value={form.name} onChange={update} placeholder="Your name" required className={inputClass} />
               </div>
               <div className="mb-5">
                 <label htmlFor="phone" className="mb-1.5 block text-[0.85rem] font-medium text-slate-300">
                   Phone Number
                 </label>
-                <input id="phone" name="phone" value={form.phone} onChange={update} placeholder="03XX-XXXXXXX" required className={inputClass} />
+                <input id="phone" name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={update} placeholder="03XX-XXXXXXX" required className={inputClass} />
               </div>
               <div className="mb-5">
                 <label htmlFor="email" className="mb-1.5 block text-[0.85rem] font-medium text-slate-300">
-                  Email Address
+                  Email Address <span className="text-slate-500">(optional)</span>
                 </label>
-                <input id="email" name="email" type="email" value={form.email} onChange={update} placeholder="you@email.com" required className={inputClass} />
+                <input id="email" name="email" type="email" autoComplete="email" value={form.email} onChange={update} placeholder="you@email.com" className={inputClass} />
               </div>
               <div className="mb-5">
                 <label htmlFor="message" className="mb-1.5 block text-[0.85rem] font-medium text-slate-300">
@@ -105,8 +113,11 @@ export default function Contact({ showIntro = true }) {
                 type="submit"
                 className="w-full rounded-lg bg-gradient-to-br from-gold to-gold-dark px-7 py-3.5 font-semibold text-navy transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(201,162,39,0.35)]"
               >
-                Send Message
+                Send via WhatsApp
               </button>
+              <p className="mt-3 text-center text-[0.8rem] text-slate-500">
+                Opens WhatsApp with your message ready to send.
+              </p>
             </form>
           </Reveal>
         </div>

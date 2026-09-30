@@ -93,8 +93,8 @@ export default function Navbar() {
 
       <div
         id="mobile-menu"
-        className={`fixed top-0 right-0 h-screen w-3/4 max-w-[300px] flex-col items-center justify-center gap-6 bg-navy-light shadow-[-10px_0_40px_rgba(0,0,0,0.4)] transition-[right] duration-300 md:hidden ${
-          open ? "flex right-0" : "flex -right-full"
+        className={`fixed top-0 flex h-screen w-3/4 max-w-[300px] flex-col items-center justify-center gap-6 bg-navy-light shadow-[-10px_0_40px_rgba(0,0,0,0.4)] transition-[right,visibility] duration-300 md:hidden ${
+          open ? "visible right-0" : "invisible -right-full"
         }`}
       >
         {navItems.map((item) => (

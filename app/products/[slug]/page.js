@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import SpecTable from "@/components/SpecTable";
 import Reveal from "@/components/Reveal";
-import { BASE_URL, products } from "@/lib/site";
+import { BASE_URL, products, ogDefaults } from "@/lib/site";
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -27,10 +27,7 @@ export async function generateMetadata({ params }) {
       title: `${product.name} | Classic Elevators Pakistan`,
       description: product.short,
       url: `${BASE_URL}/products/${slug}`,
-      images: [product.hero],
-      siteName: "Classic Elevators",
-      locale: "en_PK",
-      type: "website",
+      ...ogDefaults,
     },
   };
 }
