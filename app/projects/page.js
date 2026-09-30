@@ -7,11 +7,11 @@ import { BASE_URL, showProjects, ogDefaults } from "@/lib/site";
 export const metadata = !showProjects ? { title: "Page Not Found | Classic Elevators Pakistan" } : {
   title: "Recent Projects | Classic Elevators Pakistan",
   description:
-    "Browse Classic Elevators installations across hospitals, malls and industrial sites across Daska, Sialkot, Lahore, Gujrat, Islamabad and beyond.",
+    "Real cargo, passenger + cargo and home lift installations by Classic Elevators in Sialkot, Lahore, Narowal, Rawalpindi and Sambrial, with installation videos.",
   openGraph: {
     title: "Recent Projects | Classic Elevators Pakistan",
     description:
-      "Browse Classic Elevators installations across hospitals, malls and industrial sites across Daska, Sialkot, Lahore, Gujrat, Islamabad and beyond.",
+      "Real cargo, passenger + cargo and home lift installations by Classic Elevators in Sialkot, Lahore, Narowal, Rawalpindi and Sambrial, with installation videos.",
     url: `${BASE_URL}/projects`,
     ...ogDefaults,
   },

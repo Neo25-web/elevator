@@ -7,9 +7,9 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
-import { projects } from "@/lib/site";
+import { projects, site } from "@/lib/site";
 
-const filters = ["All", "Hospital", "Commercial", "Industrial"];
+const filters = ["All", ...new Set(projects.map((p) => p.type))];
 
 export default function ProjectsView() {
   const [active, setActive] = useState("All");
@@ -24,7 +24,7 @@ export default function ProjectsView() {
         <PageHeader
           label="Our Work"
           title="Recent Projects"
-          subtitle="A selection of passenger, panoramic and freight elevator installations across Daska, Sialkot, Lahore, Gujrat, Islamabad and beyond."
+          subtitle="Real cargo, passenger + cargo and home lift installations across Sialkot, Lahore, Narowal, Rawalpindi and Sambrial — tap any project to watch the video."
         />
         <section className="py-24">
           <div className="mx-auto w-[92%] max-w-[1140px]">
@@ -47,13 +47,24 @@ export default function ProjectsView() {
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {filtered.map((project, i) => (
-                <ProjectCard key={project.title} project={project} delay={i * 100} />
+                <ProjectCard key={project.videoId} project={project} delay={(i % 3) * 100} />
               ))}
             </div>
 
             {filtered.length === 0 && (
               <p className="text-center text-slate-400">No projects in this category yet.</p>
             )}
+
+            <Reveal className="mt-12 text-center">
+              <a
+                href={site.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-7 py-3.5 font-semibold text-white transition-all hover:border-gold hover:text-gold"
+              >
+                ▶ See 400+ Installation Videos on YouTube
+              </a>
+            </Reveal>
           </div>
         </section>
         <section className="border-t border-gold/10 bg-navy-light py-16">

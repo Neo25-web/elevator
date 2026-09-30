@@ -9,7 +9,7 @@
 
 - [x] Website code complete (Next.js, this repo) — real contact info, products, control panels
 - [ ] Domain `classicelevators.com.pk` — registration in progress at HosterPK (Rs. 3,899 / 2 yrs)
-- [ ] Real projects list + photos from owner — **pending**; site currently has placeholder projects
+- [x] Real projects list — 16 installations taken from YouTube "Installation At …" titles (2026-09-30); cards link to the videos. Real photos still optional.
 - [ ] Deployed to Netlify
 - [x] Google Business Profile claimed — verified 2026-07-18 under the owner's Google account ("You manage this Business Profile"); 215 customer interactions already recorded. Next: photos, description (see TEMPLATES.md), categories, review link outreach. Website field left empty until domain is live.
 
@@ -62,7 +62,7 @@ The profile "Classic Elevators" (Manufacturer in Daska, Pasrur Rd, Islampura, 03
 
 | Item | Where it goes |
 |---|---|
-| Real projects list (name, city, what was installed) | `projects` array in `lib/site.js` — currently fake placeholders |
+| More projects (hotels, hospitals, factories named in other videos) | `projects` array in `lib/site.js` — confirm with Jamil first |
 | Installation/factory photos | Replace placeholder SVGs (see `// real: *.jpg` comments in `lib/site.js`) |
 | WhatsApp number confirmation | Form sends to 0300 6108294 — confirm this has WhatsApp |
 | Facebook/YouTube links | Footer + `sameAs` in `app/layout.js` JSON-LD |

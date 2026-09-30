@@ -56,14 +56,13 @@ Pages: Home, Products (grouped: Elevators / Control Panels), product detail page
 **Real data already in the site:** phone, address, service areas, "since 2005", 20 years stat, product lineup.
 
 **Still placeholder — DO NOT ship as-is:**
-- Projects list in `lib/site.js` (`projects` array) — fake names ("City Hospital, Lahore", "ABC Textile Factory"). Owner will share the real project list later.
-- All product/project images are branded placeholder SVGs (`// real: *.jpg` comments mark what to swap in).
+- All product images are branded placeholder SVGs (`// real: *.jpg` comments mark what to swap in).
 - Technology page has some "Placeholder:" descriptions.
 - About section image is a stock Unsplash photo.
 
 ## Pending From Owner
 
-1. Real projects list (name, city, what was installed, photos)
+1. Real project photos (projects list is done — 16 installations from YouTube "Installation At …" titles are live on /projects, using video thumbnails; more sites named in other video titles still need confirming with Jamil)
 2. Confirm WhatsApp number (form currently sends to 0300 6108294)
 3. Real photos of installations, factory, panels
 4. Facebook/Instagram page links (if any) for footer + structured data
