@@ -11,7 +11,7 @@
 - [ ] Domain `classicelevators.com.pk` — registration in progress at HosterPK (Rs. 3,899 / 2 yrs)
 - [ ] Real projects list + photos from owner — **pending**; site currently has placeholder projects
 - [ ] Deployed to Netlify
-- [ ] Google Business Profile claimed
+- [x] Google Business Profile claimed — verified 2026-07-18 under the owner's Google account ("You manage this Business Profile"); 215 customer interactions already recorded. Next: photos, description (see TEMPLATES.md), categories, review link outreach. Website field left empty until domain is live.
 
 ---
 
