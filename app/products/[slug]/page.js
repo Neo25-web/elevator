@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import SpecTable from "@/components/SpecTable";
 import Reveal from "@/components/Reveal";
-import { BASE_URL, products, ogDefaults } from "@/lib/site";
+import { BASE_URL, products, ogDefaults, ytThumb } from "@/lib/site";
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -118,18 +118,31 @@ export default async function ProductDetailPage({ params }) {
             <Reveal>
               <h2 className="mb-8 font-serif text-2xl">Gallery</h2>
             </Reveal>
-            <div className="grid gap-6 md:grid-cols-2">
-              {product.gallery.map((src, i) => (
-                <Reveal key={src} delay={i * 100}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-gold/10">
-                    <Image
-                      src={src}
-                      alt={`${product.name} gallery image ${i + 1}`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
-                    />
-                  </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {product.gallery.map((item, i) => (
+                <Reveal key={item.videoId} delay={(i % 3) * 100}>
+                  <a
+                    href={`https://www.youtube.com/shorts/${item.videoId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block overflow-hidden rounded-xl border border-gold/10 bg-navy-mid transition-all hover:border-gold/30"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden bg-navy-deep">
+                      <Image
+                        src={item.src ?? ytThumb(item.videoId)}
+                        alt={item.caption}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <span className="absolute right-3 bottom-3 grid h-10 w-10 place-items-center rounded-full bg-black/60 text-sm text-white">
+                        ▶
+                      </span>
+                    </div>
+                    <p className="px-4 py-3 text-[0.9rem] text-slate-300 group-hover:text-gold">
+                      {item.caption}
+                    </p>
+                  </a>
                 </Reveal>
               ))}
             </div>

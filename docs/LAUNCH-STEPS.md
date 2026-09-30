@@ -63,7 +63,7 @@ The profile "Classic Elevators" (Manufacturer in Daska, Pasrur Rd, Islampura, 03
 | Item | Where it goes |
 |---|---|
 | More projects (hotels, hospitals, factories named in other videos) | `projects` array in `lib/site.js` — confirm with Jamil first |
-| Installation/factory photos | Replace placeholder SVGs (see `// real: *.jpg` comments in `lib/site.js`) |
+| Installation/factory photos (optional upgrade) | Site uses YouTube video frames now; replace with sharper photos via `hero` / gallery `src` in `lib/site.js` |
 | WhatsApp number confirmation | Form sends to 0300 6108294 — confirm this has WhatsApp |
 | Facebook/YouTube links | Footer + `sameAs` in `app/layout.js` JSON-LD |
 

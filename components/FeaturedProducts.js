@@ -9,9 +9,9 @@ export default function FeaturedProducts() {
         <SectionHeader
           label="What We Offer"
           title="Featured Products"
-          subtitle="Passenger, panoramic and freight elevator solutions for every building type."
+          subtitle="Passenger, home, panoramic and freight lifts for every building type."
         />
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {products
             .filter((product) => product.category === "elevators")
             .map((product, i) => (

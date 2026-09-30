@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
+import { ytThumb } from "@/lib/site";
 
 export default function ProjectCard({ project, delay = 0 }) {
-  const image = project.image ?? `https://i.ytimg.com/vi/${project.videoId}/oar2.jpg`;
+  const image = project.image ?? ytThumb(project.videoId);
 
   return (
     <Reveal

@@ -24,6 +24,7 @@ Daska · Sialkot · Lahore · Gujrat · Wazirabad · Jhelum · Islamabad · Shak
 
 **Elevators**
 - Passenger elevators — hospitals, malls, commercial and residential buildings
+- Home lifts — 2-person passenger and 100–500 kg goods/kitchen lifts for houses (page added 2026-09-30)
 - Capsule / panoramic lifts — premium glass lifts
 - Freight / loader lifts — industrial, many sizes (owner: "kaafi lambi list" — full list pending)
 
@@ -56,7 +57,7 @@ Pages: Home, Products (grouped: Elevators / Control Panels), product detail page
 **Real data already in the site:** phone, address, service areas, "since 2005", 20 years stat, product lineup.
 
 **Still placeholder — DO NOT ship as-is:**
-- All product images are branded placeholder SVGs (`// real: *.jpg` comments mark what to swap in).
+- Product and project images are frames from our YouTube Shorts (`ytThumb(videoId)` in `lib/site.js`). Swap in real photos by setting `hero` / a gallery item's `src` to a `/products/*.jpg` path.
 - Technology page has some "Placeholder:" descriptions.
 - About section image is a stock Unsplash photo.
 
