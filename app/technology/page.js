@@ -13,7 +13,7 @@ export const metadata = {
     title: "Technology & Machines | Classic Elevators Pakistan",
     description:
       "Learn about the geared and gearless machines, VVVF controls, safety systems and components used in Classic Elevators installations.",
-    url: `${BASE_URL}/technology`,
+    url: `${BASE_URL}/technology/`,
     ...ogDefaults,
   },
 };

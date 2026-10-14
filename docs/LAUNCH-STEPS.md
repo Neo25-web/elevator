@@ -10,12 +10,14 @@
 - [x] Website code complete (Next.js, this repo) — real contact info, products, control panels
 - [ ] Domain `classicelevators.com.pk` — registration in progress at HosterPK (Rs. 3,899 / 2 yrs)
 - [x] Real projects list — 16 installations taken from YouTube "Installation At …" titles (2026-09-30); cards link to the videos. Real photos still optional.
-- [ ] Deployed to Netlify
+- [x] Hosting: Hostinger shared Business plan (not Netlify) — published as a static site, see [HOSTINGER_STATIC_EXPORT.md](HOSTINGER_STATIC_EXPORT.md)
 - [x] Google Business Profile claimed — verified 2026-07-18 under the owner's Google account ("You manage this Business Profile"); 215 customer interactions already recorded. Next: photos, description (see TEMPLATES.md), categories, review link outreach. Website field left empty until domain is live.
 
 ---
 
 ## Step 1 — Deploy website to Netlify (same day as domain)
+
+> **Superseded (2026-10-14):** the site is hosted on Hostinger as a static export. Follow [HOSTINGER_STATIC_EXPORT.md](HOSTINGER_STATIC_EXPORT.md) instead of Steps 1–2; the Netlify steps are kept only for reference.
 
 1. Create an account at [netlify.com](https://netlify.com) — sign up with GitHub for easy repo access. Prefer a business-owned account/email, not a personal one.
 2. Click **Add new site → Import an existing project → GitHub** → select `Neo25-web/elevator`.
@@ -72,7 +74,7 @@ Ideally the real projects go in **before Step 2** so the site launches with genu
 ## Quick reference
 
 - Repo: `Neo25-web/elevator` (branch: `main`)
-- Local build check: `npm run build`
+- Local build check: `npm run build` (writes the static site to `out/`)
 - Registrar: HosterPK (client area: hosterpk.com/clientarea)
-- Hosting: Netlify (free tier)
+- Hosting: Hostinger shared Business plan, static files in `public_html` (see HOSTINGER_STATIC_EXPORT.md)
 - Planned email: Zoho Mail (free tier)

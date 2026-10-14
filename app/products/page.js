@@ -14,7 +14,7 @@ export const metadata = {
     title: "Our Products | Classic Elevators Pakistan",
     description:
       "Passenger, panoramic and freight elevators plus manual and microprocessor control panels for hospitals, malls and industrial facilities across Daska, Sialkot, Lahore and Punjab.",
-    url: `${BASE_URL}/products`,
+    url: `${BASE_URL}/products/`,
     ...ogDefaults,
   },
 };

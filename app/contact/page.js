@@ -12,7 +12,7 @@ export const metadata = {
     title: "Contact Us | Classic Elevators Pakistan",
     description:
       "Get in touch with Classic Elevators for a free consultation and quote on passenger, panoramic and freight elevator solutions in Daska, Sialkot, Lahore and across Punjab.",
-    url: `${BASE_URL}/contact`,
+    url: `${BASE_URL}/contact/`,
     ...ogDefaults,
   },
 };

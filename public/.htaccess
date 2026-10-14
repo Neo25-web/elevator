@@ -1,0 +1,9 @@
+# Hostinger (LiteSpeed) settings for the static export in out/.
+
+# Branded 404 page from app/not-found.js
+ErrorDocument 404 /404.html
+
+# Share-preview image is generated without a file extension
+<Files "opengraph-image">
+  ForceType image/png
+</Files>

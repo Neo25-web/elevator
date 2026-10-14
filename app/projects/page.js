@@ -12,7 +12,7 @@ export const metadata = !showProjects ? { title: "Page Not Found | Classic Eleva
     title: "Recent Projects | Classic Elevators Pakistan",
     description:
       "Real cargo, passenger + cargo and home lift installations by Classic Elevators in Sialkot, Lahore, Narowal, Rawalpindi and Sambrial, with installation videos.",
-    url: `${BASE_URL}/projects`,
+    url: `${BASE_URL}/projects/`,
     ...ogDefaults,
   },
 };

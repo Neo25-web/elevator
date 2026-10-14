@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${product.name} | Classic Elevators Pakistan`,
       description: product.short,
-      url: `${BASE_URL}/products/${slug}`,
+      url: `${BASE_URL}/products/${slug}/`,
       ...ogDefaults,
     },
   };
