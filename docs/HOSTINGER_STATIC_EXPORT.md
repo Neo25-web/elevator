@@ -77,17 +77,34 @@ the slash (`/products`) should redirect to the slash version. (Python ignores
 `.htaccess`, so the 404 page and the share image type can only be checked on
 Hostinger.)
 
-## In hPanel
+## In hPanel (done 2026-10-21 — this is what worked)
 
-1. **Remove the Node.js app for classicelevators.com.pk** (or switch it to a
-   static site, if hPanel offers that — not verified). If it stays, LiteSpeed
-   keeps routing to Node and `npm start` fails.
-2. Upload the **contents** of `out/` (including the hidden `.htaccess`) to the
-   domain's `public_html`.
-3. Check on the live domain: home page, `/products/home-lift/` and a wrong URL
-   (should show the branded 404 page). Share the home URL in WhatsApp — the
-   preview must show the gold/navy card image.
-4. Verify no Node process is left for this domain (SSH):
+No need to delete the web app. Websites → classicelevators.com.pk →
+**Deployments → Redeploy** (Settings and redeploy):
+
+| Field | Value |
+|---|---|
+| Source files | Upload new files → `elevator.zip` (`git archive --format=zip --prefix=elevator/ -o elevator.zip HEAD`) |
+| Framework preset | **Other** (not Next.js — that preset expects a Node server) |
+| Root directory | `elevator` |
+| Build command | `npm run build` |
+| Output directory | `out` |
+| Entry file | *(empty — no Node server)* |
+
+Save and redeploy. The build log should show `Exporting (2/2)`,
+`Application type: Other`, `Mode: publish` and `Syncing public_html`.
+
+Checked on the live domain after the switch: all pages 200, `/products` →
+301 `/products/`, a wrong URL → branded 404 page with status 404,
+`/opengraph-image` served as `image/png`, response headers show static files
+(`last-modified`, no Next.js headers). The other sites on the plan returned the
+same status and size as before.
+
+To roll back: Redeploy → "Use previous files" is not enough (the old zip is
+replaced); upload a zip of an older commit with preset **Next.js** and output
+`.next`.
+
+Verify no Node process is left for this domain (SSH):
 
 ```bash
 ps -eo pid,nlwp,etimes,args --sort=-nlwp | grep -i classicelevators
